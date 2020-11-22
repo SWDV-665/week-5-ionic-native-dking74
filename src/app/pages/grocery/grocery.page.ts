@@ -34,9 +34,7 @@ export class GroceryPage {
   }
 
   async shareGroceryItem(groceryItem: Grocery) {
-    this.socialSharing.share(groceryItem.toString())
-      .then(success => this.displayToastMessage("Successfully shared!", ToastClass.ADD_ITEM))
-      .catch(error => this.displayToastMessage("Error sharing!" + error, ToastClass.REMOVE_ITEM));
+    this.socialSharing.share(groceryItem.toString());
   }
 
   async editGroceryItem(groceryItem: Grocery) {

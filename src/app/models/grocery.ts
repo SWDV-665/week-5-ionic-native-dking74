@@ -9,20 +9,15 @@ export default class Grocery {
         this.pricePerUnit = price;
     }
 
-    getTotalPrice() {
+    public getTotalPrice(): number {
         return this.quantity * this.pricePerUnit;
     }
 
-    toString() {
-        return (
-            `Product: ${this.name}, `                +
-            `Quantity: ${this.quantity}, `           +
-            `Price Per Unit: ${this.pricePerUnit}, ` +
-            `Total Price: ${this.getTotalPrice()}`
-        );
+    public toString(): string {
+        return JSON.stringify(this.toJSON());
     }
 
-    toJSON() {
+    public toJSON(): object {
         return {
             name: this.name,
             quantity: this.quantity,
